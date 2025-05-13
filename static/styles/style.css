@@ -1,2 +1,65 @@
 @import url(reset.css);
-@import url(font.css);
+
+:root {
+  --primary-color: #a9b1d6;
+  --secondary-color: #ff757f;
+  --tertiary-color: #ff9e64;
+  --background-color: #1f2335;
+  --font-size: 1rem;
+}
+
+body {
+  font-family: sans-serif;
+  color: var(--primary-color);
+  background-color: var(--background-color);
+  font-size: var(--font-size);
+  padding-top: 2rem;
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Header */
+
+header {
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+}
+
+header > a{
+  color: inherit;
+}
+
+header > * {
+  text-decoration: none;
+}
+
+/* Post */
+
+.post {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.post > a {
+  color: var(--secondary-color);
+}
+
+.post > a:visited {
+  color: var(--tertiary-color);
+}
+
+/* Blog */
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+i {
+  font-style: italic;
+}
+
+#content {
+  margin-top: 2rem;
+}
