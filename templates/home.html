@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+</head>
+
+<body>
+  <h1>Gabriel's Blog Posts</h1>
+  <p>Click around and enjoy!</p>
+
+  <div>
+    <h2>2025</h2>
+    <div>
+      {{ range index . "2025" }}
+      <h3><a href="/post/{{ .Title }}">{{ .Title }}</a></h3>
+      <p>{{ .ShortDescription }}</p>
+      <ul>
+        {{ range .Tags }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+  </div>
+</body>
+
+</html>

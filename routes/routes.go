@@ -1,6 +1,9 @@
 package routes
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gabrielg2020/blog/handlers"
+	"github.com/gin-gonic/gin"
+)
 
 func SetupRouter() *gin.Engine {
 	router := gin.Default()
@@ -14,6 +17,18 @@ func SetupRouter() *gin.Engine {
 				"name": name,
 			})
 		})
+	}
+
+	// Load HTML templates
+	router.LoadHTMLGlob("templates/*")
+
+	// Page routes
+	router.GET("/", handlers.Home)
+
+	// Post routes
+	post := router.Group("/post")
+	{
+		post.GET("/:title")
 	}
 
 	return router
