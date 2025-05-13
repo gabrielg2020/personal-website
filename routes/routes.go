@@ -22,10 +22,11 @@ func SetupRouter() *gin.Engine {
 	// Load HTML templates
 	router.LoadHTMLGlob("templates/*")
 
+	// Load static files
+	router.Static("/css", "./static/styles")
+
 	// Page routes
 	router.GET("/", handlers.Home)
-
-	// Post routes
 	post := router.Group("/post")
 	{
 		post.GET("/:title", handlers.Post)
