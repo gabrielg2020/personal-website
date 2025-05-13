@@ -8,11 +8,12 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Home(ctx *gin.Context)  {
+func Home(ctx *gin.Context) {
 	// Load posts
-	posts, err := services.LoadBlogPostData()
+	posts, err := services.LoadPostData()
 	if err != nil {
 		logger.Error("Failed to load blog post data: ", err)
+		return
 	}
 
 	ctx.HTML(http.StatusOK, "home.html", gin.H{

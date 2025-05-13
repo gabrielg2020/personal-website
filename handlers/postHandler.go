@@ -16,30 +16,34 @@ func Post(ctx *gin.Context) {
 	content, err := services.LoadPostContent(title)
 	if err != nil {
 		logger.Error("Error loading post content: ", err)
+		return
 	}
 
 	// Load posts
-	posts, err := services.LoadBlogPostData()
+	posts, err := services.LoadPostData()
 	if err != nil {
 		logger.Error("Error loading post data: ", err)
+		return
 	}
 
 	// Find the post by title
-	var postToShow models.BlogPost
+	var postToShow *models.BlogPost
 	for _, post := range posts {
 		if post.Title == title {
 			post.Content = content
+			postToShow = &post
+			break // Exit loop once the post is found
 		}
-		postToShow = post
 	}
 
-	logger.Info(postToShow.Content)
-	logger.Info(postToShow.Title)
-
 	// Pass content to template
-	ctx.HTML(http.StatusOK, "post.html", gin.H{
-		"Title":   postToShow.Title,
-		"Date":    postToShow.Date,
-		"Content": postToShow.Content,
-	})
+	if postToShow != nil {
+		ctx.HTML(http.StatusOK, "post.html", gin.H{
+			"Title":   postToShow.Title,
+			"Date":    postToShow.Date,
+			"Content": postToShow.Content,
+		})
+	} else {
+		logger.Error("Post not found: ", title)
+	}
 }

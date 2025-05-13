@@ -9,7 +9,7 @@ import (
 )
 
 // Load data in `data/blogs.json`
-func LoadBlogPostData() ([]models.BlogPost, error) {
+func LoadPostData() ([]models.BlogPost, error) {
 	var posts []models.BlogPost
 
 	// Read the JSON file
