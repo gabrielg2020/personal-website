@@ -1,7 +1,9 @@
 package models
 
+import "html/template"
+
 type BlogPost struct {
-	Title string `json:"title"`
-	ShortDescription string `json:"shortDescription"`
-	Tags []string `json:"tags"`
+	Title   string `json:"title"`
+	Date    string `json:"date"`
+	Content template.HTML
 }

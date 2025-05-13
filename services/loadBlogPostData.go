@@ -8,23 +8,23 @@ import (
 	"github.com/gabrielg2020/blog/models"
 )
 
-// Load data in `./data/blogs.json` into a map of BlogPost structs
-func LoadBlogPostData() (map[string][]models.BlogPost, error) {
-	var years map[string][]models.BlogPost
+// Load data in `data/blogs.json`
+func LoadBlogPostData() ([]models.BlogPost, error) {
+	var posts []models.BlogPost
 
 	// Read the JSON file
 	jsonFile, err := os.ReadFile("data/blogs.json")
 	if err != nil {
-		logger.Error("Error opening JSON file: ", err)
+		logger.Error("Error reading JSON file: ", err)
 		return nil, err
 	}
 
 	// Unmarshall the JSON into map
-	err = json.Unmarshal(jsonFile, &years)
+	err = json.Unmarshal(jsonFile, &posts)
 	if err != nil {
 		logger.Error("Error unmarshaling JSON: ", err)
 		return nil, err
 	}
 
-	return years, nil
+	return posts, nil
 }

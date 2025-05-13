@@ -28,7 +28,7 @@ func SetupRouter() *gin.Engine {
 	// Post routes
 	post := router.Group("/post")
 	{
-		post.GET("/:title")
+		post.GET("/:title", handlers.Post)
 	}
 
 	return router

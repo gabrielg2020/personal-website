@@ -1,9 +1,6 @@
-{
-  "2025": [
-    {
+[
+  {
       "title": "testblog",
-      "shortDescription": "shortDescription",
-      "tags": ["tag1", "tag2"]
-    }
-  ]
-}
+      "date": "13 May, 2025"
+  }
+]

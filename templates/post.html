@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog</title>
 </head>
-
 <body>
   <div>
-    {{ range .Posts }}
-    <p>{{ .Date }}</p>
-    <a href="/post/{{ .Title }}">{{ .Title }}</a>
-    {{ end }}
+    <h1>{{ .Title }}</h1>
+    <i>{{ .Date }}</i>
+    {{ .Content }}
   </div>
 </body>
-
 </html>
