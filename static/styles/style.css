@@ -12,8 +12,12 @@ body {
   margin: 0 auto;
 }
 
+main {
+  margin-left: 0.5rem;
+}
+
 a {
-  color: inherit;
+  color: var(--tertiary-color);
 }
 
 img {
@@ -34,8 +38,17 @@ header>* {
   text-decoration: none;
 }
 
-/* Post */
+header>a {
+  color: var(--secondary-color);
+}
 
+nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Post */
 .post {
   display: flex;
   gap: 2rem;
@@ -51,7 +64,6 @@ header>* {
 }
 
 /* Blog */
-
 h1 {
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -82,10 +94,6 @@ hr {
 #content {
   margin-top: 2rem;
   line-height: 1.5rem;
-}
-
-#content>p>a {
-  color: var(--secondary-color);
 }
 
 /* Code block */

@@ -1,6 +1,8 @@
 package routes
 
 import (
+	"net/http"
+
 	"github.com/gabrielg2020/blog/handlers"
 	"github.com/gin-gonic/gin"
 )
@@ -26,14 +28,20 @@ func SetupRouter() *gin.Engine {
 	router.Static("/css", "./static/styles")
 
 	// Page routes
-	router.GET("/", handlers.Home)
-	post := router.Group("/post")
+	router.GET("/", func(ctx *gin.Context) {
+		ctx.HTML(http.StatusOK, "home.html", gin.H{})
+	})
+
+	router.GET("/blogs", handlers.Blog)
+	post := router.Group("/blogs")
 	{
 		post.GET("/:title", handlers.Post)
 	}
 
 	// No route
-	router.NoRoute(handlers.NoRoute)
+	router.NoRoute(func(ctx *gin.Context) {
+		ctx.HTML(http.StatusNotFound, "noRoute.html", gin.H{})
+	})
 
 	return router
 }

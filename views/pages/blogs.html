@@ -9,12 +9,18 @@
 </head>
 
 <body>
-  {{ template "header"}}
+  <header>
+    <a href="/">Gabriel</a>
+  </header>
   <main>
-    <p>Software Engineer at the Driver & Vehicle Standards Agency -- Building and maintaining TypeScript and PHP
-      services</p>
-    <br>
-    <p>Best way to reach me is my <a href="https://linkedin.com/in/gabrielg4">Linkedin</a></p>
+    <div id="posts-list">
+      {{ range .Posts }}
+      <div class="post">
+        <p>{{ .Date }}</p>
+        <a href="/blogs/{{ .Title }}">{{ .Title }}</a>
+      </div>
+      {{ end }}
+    </div>
   </main>
 </body>
 
