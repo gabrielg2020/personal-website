@@ -9,8 +9,8 @@ import (
 )
 
 type BlogPost struct {
-	Title   string `json:"title"`
-	Date    string `json:"date"`
+	Title string `json:"title"`
+	Date  string `json:"date"`
 }
 
 func main() {
@@ -26,7 +26,7 @@ func main() {
 
 	blogTitle := os.Args[1]
 
-	createNewBlog(blogTitle)	
+	createNewBlog(blogTitle)
 }
 
 func createNewBlog(blogTitle string) {
@@ -64,17 +64,17 @@ func createNewBlog(blogTitle string) {
 
 	// Create a new entry
 	currentDate := time.Now().Format("2 January, 2006")
-	newPost := BlogPost {
+	newPost := BlogPost{
 		Title: blogTitle,
-		Date: currentDate,
+		Date:  currentDate,
 	}
 
 	// Convert back to JSON
 	posts = append(posts, newPost)
 	updateJSON, err := json.MarshalIndent(posts, "", " ")
 	if err != nil {
-		 fmt.Println("Error creating JSON: ", err)
-		 os.Exit(1)
+		fmt.Println("Error creating JSON: ", err)
+		os.Exit(1)
 	}
 
 	// Write back to file
@@ -86,3 +86,4 @@ func createNewBlog(blogTitle string) {
 
 	fmt.Println("Successfully created blog!")
 }
+
