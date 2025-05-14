@@ -38,8 +38,13 @@ header>a {
   color: var(--secondary-color);
 }
 
-/* Post */
+nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
 
+/* Post */
 .post {
   display: flex;
   gap: 2rem;
@@ -55,7 +60,6 @@ header>a {
 }
 
 /* Blog */
-
 h1 {
   font-size: 2rem;
   margin-bottom: 2rem;
