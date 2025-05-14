@@ -14,6 +14,7 @@ body {
 
 main {
   margin-left: 0.5rem;
+  margin-bottom: 4rem;
 }
 
 a {
@@ -28,7 +29,6 @@ img {
 
 
 /* Header */
-
 header {
   color: var(--secondary-color);
   margin-bottom: 2rem;
@@ -48,22 +48,10 @@ nav {
   margin-top: 1rem;
 }
 
-/* Post */
-.post {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
+p {
+  line-height: 1.2rem;
 }
 
-.post>a {
-  color: var(--secondary-color);
-}
-
-.post>a:visited {
-  color: var(--tertiary-color);
-}
-
-/* Blog */
 h1 {
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -91,9 +79,24 @@ hr {
   margin-top: 1rem;
 }
 
+/* Post */
+.post {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.post>a {
+  color: var(--secondary-color);
+}
+
+.post>a:visited {
+  color: var(--tertiary-color);
+}
+
+/* Blog */
 #content {
   margin-top: 2rem;
-  line-height: 1.5rem;
 }
 
 /* Code block */
