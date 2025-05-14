@@ -4,6 +4,7 @@
   --primary-color: #a9b1d6;
   --secondary-color: #7aa2f7;
   --tertiary-color: #ff9e64;
+  --error-color: #c53b53;
   --background-color: #1f2335;
   --code-background-color: #3b4261;
   --code-color: #41a6b5;
@@ -29,6 +30,7 @@ img {
   margin: 0 auto;
   margin-bottom: 2rem;
 }
+
 
 /* Header */
 
@@ -135,4 +137,32 @@ ul {
 
 ol {
   list-style: decimal;
+}
+
+/* Error */
+#error-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(197, 59, 83, 0.1);
+  backdrop-filter: blur(3px);
+}
+
+#error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+#error-content>p>a {
+  color: var(--tertiary-color);
+}
+
+#error-content>img {
+  margin-top: 2rem;
 }

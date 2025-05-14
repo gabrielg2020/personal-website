@@ -13,10 +13,15 @@ func Home(ctx *gin.Context) {
 	posts, err := services.LoadPostData()
 	if err != nil {
 		logger.Error("Failed to load blog post data: ", err)
+		ctx.HTML(http.StatusInternalServerError, "home.html", gin.H{
+			"Posts": posts,
+			"Error": true,
+		})
 		return
 	}
 
 	ctx.HTML(http.StatusOK, "home.html", gin.H{
 		"Posts": posts,
+		"Error": true,
 	})
 }
