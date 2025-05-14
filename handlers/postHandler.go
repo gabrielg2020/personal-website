@@ -1,7 +1,9 @@
 package handlers
 
 import (
+	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/gabrielg2020/blog/logger"
 	"github.com/gabrielg2020/blog/models"
@@ -11,6 +13,15 @@ import (
 
 func Post(ctx *gin.Context) {
 	title := ctx.Param("title")
+
+	// Check if file exists
+	_, err := os.Stat(fmt.Sprintf("content/%s.html", title))
+	if err != nil {
+		if os.IsNotExist(err) {
+			NoRoute(ctx) // Move to no route handler if post does not exist
+			return
+		}
+	}
 
 	// Load HTML file
 	content, err := services.LoadPostContent(title)

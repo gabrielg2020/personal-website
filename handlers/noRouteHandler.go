@@ -7,5 +7,5 @@ import (
 )
 
 func NoRoute(ctx *gin.Context) {
-	ctx.HTML(http.StatusOK, "noRoute.html", gin.H{})
+	ctx.HTML(http.StatusNotFound, "noRoute.html", gin.H{})
 }

@@ -24,6 +24,12 @@ a {
   color: inherit;
 }
 
+img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
 /* Header */
 
 header {
@@ -90,7 +96,7 @@ hr {
 }
 
 /* Code block */
-#content>.code {
+.code {
   color: var(--code-color);
   background-color: var(--code-background-color);
   padding: 1rem;
@@ -99,25 +105,26 @@ hr {
 }
 
 /* Quote block */
-#content>.quote {
+.quote {
   padding: 1rem;
   margin: 1rem;
   border-left: 2px solid var(--tertiary-color);
 }
 
-#content>.quote>p:first-child{
+.quote>p:first-child {
   font-style: italic;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
-#content>.quote>p:last-child{
+.quote>p:last-child {
   font-style: italic;
   font-weight: lighter;
 }
 
 /* Lists */
-ul, ol {
+ul,
+ol {
   margin-left: 3rem;
   margin-bottom: 2rem;
 }
@@ -129,4 +136,3 @@ ul {
 ol {
   list-style: decimal;
 }
-
