@@ -20,7 +20,7 @@ func SetupRouter() *gin.Engine {
 	}
 
 	// Load HTML templates
-	router.LoadHTMLGlob("templates/*")
+	router.LoadHTMLGlob("views/**/*.html")
 
 	// Load static files
 	router.Static("/css", "./static/styles")
