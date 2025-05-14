@@ -27,6 +27,7 @@ func Post(ctx *gin.Context) {
 	content, err := services.LoadPostContent(title)
 	if err != nil {
 		logger.Error("Error loading post content: ", err)
+		ErrorPage(ctx)
 		return
 	}
 
@@ -34,6 +35,7 @@ func Post(ctx *gin.Context) {
 	posts, err := services.LoadPostData()
 	if err != nil {
 		logger.Error("Error loading post data: ", err)
+		ErrorPage(ctx)
 		return
 	}
 
@@ -56,5 +58,6 @@ func Post(ctx *gin.Context) {
 		})
 	} else {
 		logger.Error("Post not found: ", title)
+		NoRoute(ctx)
 	}
 }

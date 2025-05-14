@@ -13,6 +13,7 @@ func Home(ctx *gin.Context) {
 	posts, err := services.LoadPostData()
 	if err != nil {
 		logger.Error("Failed to load blog post data: ", err)
+		ErrorPage(ctx)
 		return
 	}
 
