@@ -2,9 +2,11 @@
 
 :root {
   --primary-color: #a9b1d6;
-  --secondary-color: #ff757f;
+  --secondary-color: #7aa2f7;
   --tertiary-color: #ff9e64;
   --background-color: #1f2335;
+  --code-background-color: #3b4261;
+  --code-color: #41a6b5;
   --font-size: 1rem;
 }
 
@@ -14,8 +16,12 @@ body {
   background-color: var(--background-color);
   font-size: var(--font-size);
   padding-top: 2rem;
-  width: 70%;
+  width: 75ch;
   margin: 0 auto;
+}
+
+a {
+  color: inherit;
 }
 
 /* Header */
@@ -25,11 +31,7 @@ header {
   margin-bottom: 2rem;
 }
 
-header > a{
-  color: inherit;
-}
-
-header > * {
+header>* {
   text-decoration: none;
 }
 
@@ -41,11 +43,11 @@ header > * {
   margin-bottom: 1.5rem;
 }
 
-.post > a {
+.post>a {
   color: var(--secondary-color);
 }
 
-.post > a:visited {
+.post>a:visited {
   color: var(--tertiary-color);
 }
 
@@ -56,10 +58,75 @@ h1 {
   margin-bottom: 2rem;
 }
 
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  color: var(--secondary-color);
+}
+
 i {
   font-style: italic;
 }
 
+strong {
+  font-weight: bold;
+}
+
+hr {
+  background-color: var(--tertiary-color);
+  border: none;
+  height: 2px;
+  margin-top: 1rem;
+}
+
 #content {
   margin-top: 2rem;
+  line-height: 1.5rem;
 }
+
+#content>p>a {
+  color: var(--secondary-color);
+}
+
+/* Code block */
+#content>.code {
+  color: var(--code-color);
+  background-color: var(--code-background-color);
+  padding: 1rem;
+  max-height: 10lh;
+  overflow: auto;
+}
+
+/* Quote block */
+#content>.quote {
+  padding: 1rem;
+  margin: 1rem;
+  border-left: 2px solid var(--tertiary-color);
+}
+
+#content>.quote>p:first-child{
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+#content>.quote>p:last-child{
+  font-style: italic;
+  font-weight: lighter;
+}
+
+/* Lists */
+ul, ol {
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
