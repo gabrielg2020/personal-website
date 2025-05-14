@@ -2,6 +2,7 @@ package services
 
 import (
 	"encoding/json"
+	"errors"
 	"os"
 
 	"github.com/gabrielg2020/blog/logger"
@@ -26,5 +27,5 @@ func LoadPostData() ([]models.BlogPost, error) {
 		return nil, err
 	}
 
-	return posts, nil
+	return posts, errors.New("hello")
 }
