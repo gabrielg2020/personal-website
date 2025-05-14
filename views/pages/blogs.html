@@ -9,9 +9,7 @@
 </head>
 
 <body>
-  <header>
-    <a href="/">Gabriel</a>
-  </header>
+  {{ template "header"}}
   <main>
     <div id="posts-list">
       {{ range .Posts }}
