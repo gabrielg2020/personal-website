@@ -18,7 +18,7 @@ func Post(ctx *gin.Context) {
 	_, err := os.Stat(fmt.Sprintf("content/%s.html", title))
 	if err != nil {
 		if os.IsNotExist(err) {
-			NoRoute(ctx) // Move to no route handler if post does not exist
+			ctx.HTML(http.StatusNotFound, "noRoute.html", gin.H{}) // Move to no route handler if post does not exist
 			return
 		}
 	}
@@ -27,7 +27,7 @@ func Post(ctx *gin.Context) {
 	content, err := services.LoadPostContent(title)
 	if err != nil {
 		logger.Error("Error loading post content: ", err)
-		ErrorPage(ctx)
+		ctx.HTML(http.StatusNotFound, "error.html", gin.H{})
 		return
 	}
 
@@ -35,7 +35,7 @@ func Post(ctx *gin.Context) {
 	posts, err := services.LoadPostData()
 	if err != nil {
 		logger.Error("Error loading post data: ", err)
-		ErrorPage(ctx)
+		ctx.HTML(http.StatusNotFound, "error.html", gin.H{})
 		return
 	}
 
@@ -58,6 +58,6 @@ func Post(ctx *gin.Context) {
 		})
 	} else {
 		logger.Error("Post not found: ", title)
-		NoRoute(ctx)
+		ctx.HTML(http.StatusNotFound, "noRoute.html", gin.H{})
 	}
 }

@@ -13,7 +13,7 @@ func Blog(ctx *gin.Context) {
 	posts, err := services.LoadPostData()
 	if err != nil {
 		logger.Error("Failed to load blog post data: ", err)
-		ErrorPage(ctx)
+		ctx.HTML(http.StatusNotFound, "error.html", gin.H{})
 		return
 	}
 
