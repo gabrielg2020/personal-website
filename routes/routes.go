@@ -32,5 +32,8 @@ func SetupRouter() *gin.Engine {
 		post.GET("/:title", handlers.Post)
 	}
 
+	// No route
+	router.NoRoute(handlers.NoRoute)
+
 	return router
 }
