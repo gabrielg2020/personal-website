@@ -1,0 +1,103 @@
+/* Tablet styles (between 768px and 1024px) */
+@media screen and (max-width: 1024px) {
+  :root {
+    --font-size: 0.95rem;
+  }
+
+  body {
+    width: 90%;
+    max-width: 65ch;
+    padding-top: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .post {
+    gap: 1.5rem;
+  }
+
+  .code {
+    max-height: 15lh;
+  }
+}
+
+/* Mobile styles (less than 768px) */
+@media screen and (max-width: 767px) {
+  :root {
+    --font-size: 0.9rem;
+  }
+
+  body {
+    width: 95%;
+    padding: 1rem;
+    padding-top: 1rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .post {
+    flex-direction: row;
+  }
+
+  ul,
+  ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .code {
+    padding: 0.75rem;
+    max-height: 20lh;
+    font-size: 0.85rem;
+  }
+
+  .quote {
+    padding: 0.75rem;
+    margin: 0.75rem;
+  }
+
+  img {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Extra small screens (less than 480px) */
+@media screen and (max-width: 479px) {
+  :root {
+    --font-size: 0.85rem;
+  }
+
+  body {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  ul,
+  ol {
+    margin-left: 1rem;
+  }
+
+  header {
+    margin-bottom: 1.2rem;
+  }
+}
