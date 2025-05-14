@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header>
+    <a href="/">Gabriel</a>
+  </header>
+  <main>
+    <div id="posts-list">
+      {{ range .Posts }}
+      <div class="post">
+        <p>{{ .Date }}</p>
+        <a href="/blogs/{{ .Title }}">{{ .Title }}</a>
+      </div>
+      {{ end }}
+    </div>
+  </main>
+</body>
+
+</html>
