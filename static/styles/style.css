@@ -13,7 +13,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--tertiary-color);
 }
 
 img {
@@ -32,6 +32,10 @@ header {
 
 header>* {
   text-decoration: none;
+}
+
+header>a {
+  color: var(--secondary-color);
 }
 
 /* Post */
@@ -82,10 +86,6 @@ hr {
 #content {
   margin-top: 2rem;
   line-height: 1.5rem;
-}
-
-#content>p>a {
-  color: var(--secondary-color);
 }
 
 /* Code block */

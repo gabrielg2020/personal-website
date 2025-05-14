@@ -27,7 +27,9 @@ func SetupRouter() *gin.Engine {
 
 	// Page routes
 	router.GET("/", handlers.Home)
-	post := router.Group("/post")
+
+	router.GET("/blogs", handlers.Blog)
+	post := router.Group("/blogs")
 	{
 		post.GET("/:title", handlers.Post)
 	}
