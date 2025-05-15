@@ -36,6 +36,10 @@ func SetupRouter() *gin.Engine {
 		ctx.HTML(http.StatusOK, "about.html", gin.H{})
 	})
 
+	router.GET("/projects", func(ctx *gin.Context) {
+		ctx.HTML(http.StatusOK, "projects.html", gin.H{})
+	})
+
 	router.GET("/blogs", handlers.Blog)
 	post := router.Group("/blogs")
 	{
