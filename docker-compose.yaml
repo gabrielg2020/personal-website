@@ -1,0 +1,9 @@
+services:
+  personal-website:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    restart: always
+    environment:
+        GIN_MODE: release
