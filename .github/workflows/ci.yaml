@@ -11,4 +11,4 @@ on:
 jobs:
   go:
     name: Go Workflow
-    uses: ./.github/go.yaml
+    uses: ./.github/workflows/go.yaml
