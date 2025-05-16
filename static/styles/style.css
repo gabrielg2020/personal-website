@@ -9,11 +9,13 @@ body {
   font-size: var(--font-size);
   padding-top: 2rem;
   width: 75ch;
+  max-width: 95%;
   margin: 0 auto;
 }
 
 main {
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
   margin-bottom: 4rem;
 }
 
