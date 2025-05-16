@@ -8,7 +8,7 @@ on:
       branches:
         - main
 
-  jobs:
-    go:
-      name: Go Workflow
-      uses: ./.github/go.yaml
+jobs:
+  go:
+    name: Go Workflow
+    uses: ./.github/go.yaml
