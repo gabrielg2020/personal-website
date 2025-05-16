@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - main
-    pull_request:
-      branches:
-        - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   go:
     name: Go Workflow
-    uses: ./.github/workflows/go.yaml
+    uses: ./.github/go.yaml
