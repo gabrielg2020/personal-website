@@ -1,19 +1,31 @@
-# Gabriel Guimaraes - Blog
+# Gabriel Guimaraes - Personal Website
 
-A random simple blogging website that I write random things that intrest me.
+A simple personal website.
 
 ## Local Setup
 
 1. Clone Repo
 
     ```bash
-    git clone git@github.com:gabrielg2020/blog.git && cd blog
+    git clone git@github.com:gabrielg2020/personal-website.git && cd personal-website
     ```
 
 2. Run Server
 
+    ### On local machine (for development)
+
     ```bash
     go run main.go
+    ```
+
+    ### On docker contianer
+
+    ```bash
+    docker build -f Dockerfile -t gabriels-personal-website .
+    ```
+
+    ```bash
+    docker run -p 8080:8080 gabriels-personal-website:latest
     ```
 
 ### Create new blog post
